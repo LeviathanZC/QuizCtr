@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="200.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml.dialog.CreateTest">
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="300.0" scaleShape="false">
+         <bottom>
+            <HBox alignment="CENTER" prefHeight="0.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button defaultButton="true" mnemonicParsing="false" prefHeight="28.0" prefWidth="150.0" text="Создать" />
+                  <Button cancelButton="true" mnemonicParsing="false" prefHeight="28.0" prefWidth="150.0" text="Отмена" />
+               </children>
+            </HBox>
+         </bottom>
+         <top>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Название : " />
+                  <TextField />
+               </children>
+            </HBox>
+         </top>
+         <center>
+            <HBox alignment="TOP_CENTER" prefHeight="89.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label prefHeight="38.0" prefWidth="78.0" text="Кол-во модулей" wrapText="true" />
+                  <Spinner editable="true" prefHeight="35.0" prefWidth="165.0" />
+               </children>
+            </HBox>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
