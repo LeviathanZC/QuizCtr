@@ -44,7 +44,8 @@ public class QuizApp extends Application {
 
     @Override
     public void init() throws IOException {
-        Parent rootNode = new FXMLLoader().load(getClass().getResourceAsStream(FXMLPath.MAIN));
+        Parent rootNode = SceneLoader.getInstance().loadScene(this.getClass(), FXMLPath.MAIN);
+//        Parent rootNode = new FXMLLoader().load(getClass().getResourceAsStream(FXMLPath.MAIN));
         mainScene = new Scene(rootNode, MAIN_WIDTH, MAIN_HEIGHT);
     }
 
