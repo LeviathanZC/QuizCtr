@@ -21,7 +21,8 @@ public class QuizApp extends Application {
     private static Stage mainStage;
     private static Scene mainScene;
 
-    private final int MAIN_WIDTH = 400;
+    private final int MAIN_WIDTH = 300;
+    private final int MAIN_HEIGHT = 400;
 
     public static Stage getMainStage() {
         return mainStage;
@@ -44,7 +45,7 @@ public class QuizApp extends Application {
     @Override
     public void init() throws IOException {
         Parent rootNode = new FXMLLoader().load(getClass().getResourceAsStream(FXMLPath.MAIN));
-        mainScene = new Scene(rootNode, MAIN_WIDTH, MAIN_WIDTH);
+        mainScene = new Scene(rootNode, MAIN_WIDTH, MAIN_HEIGHT);
     }
 
     @Override
