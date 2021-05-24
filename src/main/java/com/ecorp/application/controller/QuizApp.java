@@ -2,12 +2,15 @@ package com.ecorp.application.controller;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.awt.*;
 import java.io.IOException;
 
 public class QuizApp extends Application {
@@ -40,7 +43,12 @@ public class QuizApp extends Application {
         }
     }
 
+    private static Rectangle2D screenBounds;
 
+    public static void centerIt() {
+        mainStage.setX((screenBounds.getWidth() - mainStage.getWidth()) / 2);
+        mainStage.setY((screenBounds.getHeight() - mainStage.getHeight()) / 2);
+    }
 
     @Override
     public void init() throws IOException {
@@ -51,9 +59,11 @@ public class QuizApp extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        screenBounds = Screen.getPrimary().getVisualBounds();
         mainStage = primaryStage;
         primaryStage.setTitle("Quiz Constructor a_1.0");
         mainStage.setScene(mainScene);
         primaryStage.show();
+        centerIt();
     }
 }

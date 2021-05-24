@@ -24,18 +24,29 @@ public class WindowMainController {
     public Button quizButton;
 
 
-    private Scene editorScene;
-    private Scene journalScene;
-    private Scene quizScene;
+    private final Scene editorScene;
+    private final Scene journalScene;
+    private final Scene quizScene;
+
+    private static final int EDITOR_WIDTH = 1000;
+    private static final int EDITOR_HEIGHT = 600;
+
+    private static final int JOURNAL_WIDTH = 0;
+    private static final int JOURNAL_HEIGHT = 0;
+
+    private static final int QUIZ_WIDTH = 0;
+    private static final int QUIZ_HEIGHT = 0;
+
 
     public WindowMainController() throws IOException {
-        editorScene = new Scene(SceneLoader.getInstance().loadScene(this.getClass(), FXMLPath.EDITOR));
-        journalScene = new Scene(SceneLoader.getInstance().loadScene(this.getClass(), FXMLPath.JOURNAL));
-        quizScene = new Scene(SceneLoader.getInstance().loadScene(this.getClass(), FXMLPath.QUIZ));
+        editorScene = new Scene(SceneLoader.getInstance().loadScene(this.getClass(), FXMLPath.EDITOR), EDITOR_WIDTH, EDITOR_HEIGHT);
+        journalScene = new Scene(SceneLoader.getInstance().loadScene(this.getClass(), FXMLPath.JOURNAL), JOURNAL_WIDTH, JOURNAL_HEIGHT);
+        quizScene = new Scene(SceneLoader.getInstance().loadScene(this.getClass(), FXMLPath.QUIZ), QUIZ_WIDTH, QUIZ_HEIGHT);
     }
 
     private void move(Scene to) {
         QuizApp.getMainStage().setScene(to);
+        QuizApp.centerIt();
     }
 
     @FXML

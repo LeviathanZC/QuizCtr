@@ -22,7 +22,7 @@
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Button>
-                  <Button fx:id="journalButton" mnemonicParsing="false" onMouseClicked="#moveToJournal" prefHeight="80.0" prefWidth="200.0" text="ЖУРНАЛ">
+                  <Button fx:id="journalButton" disable="true" mnemonicParsing="false" onMouseClicked="#moveToJournal" prefHeight="80.0" prefWidth="200.0" text="ЖУРНАЛ">
                      <VBox.margin>
                         <Insets top="12.0" />
                      </VBox.margin>
@@ -30,7 +30,7 @@
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Button>
-                  <Button fx:id="quizButton" mnemonicParsing="false" onMouseClicked="#moveToQuiz" prefHeight="80.0" prefWidth="200.0" text="ТЕСТИРОВАНИЕ">
+                  <Button fx:id="quizButton" disable="true" mnemonicParsing="false" onMouseClicked="#moveToQuiz" prefHeight="80.0" prefWidth="200.0" text="ТЕСТИРОВАНИЕ">
                      <VBox.margin>
                         <Insets top="12.0" />
                      </VBox.margin>
