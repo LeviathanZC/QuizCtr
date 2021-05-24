@@ -7,13 +7,11 @@
     <groupId>com.ecorp</groupId>
     <artifactId>QuizCtr</artifactId>
     <name>ModelQuiz</name>
-    <version>1.0-SNAPSHOT</version>
-
     <packaging>jar</packaging>
     <version>0.1_Alpha</version>
 
     <organization>
-        Used as the 'Vendor' for JNLP generation
+<!--        Used as the 'Vendor' for JNLP generation-->
         <name>quizCtr</name>
     </organization>
 
