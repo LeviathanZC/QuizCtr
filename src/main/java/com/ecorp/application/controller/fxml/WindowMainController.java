@@ -1,5 +1,8 @@
-package com.ecorp.application.controller;
+package com.ecorp.application.controller.fxml;
 
+import com.ecorp.application.controller.FXMLPath;
+import com.ecorp.application.controller.QuizApp;
+import com.ecorp.application.controller.SceneLoader;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
@@ -28,6 +31,7 @@ public class WindowMainController {
     private final Scene journalScene;
     private final Scene quizScene;
 
+    //These items are dimensions of each scene
     private static final int EDITOR_WIDTH = 1000;
     private static final int EDITOR_HEIGHT = 600;
 

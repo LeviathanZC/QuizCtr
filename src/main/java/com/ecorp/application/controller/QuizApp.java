@@ -19,6 +19,7 @@ public class QuizApp extends Application {
 
     public static void main(String[] args) throws Exception {
         launch(args);
+        log.info("launching entry point...");
     }
 
     private static Stage mainStage;
@@ -35,26 +36,28 @@ public class QuizApp extends Application {
         return mainScene;
     }
 
-    public void changeScene(String fxml) {
+    /*public void changeScene(String fxml) {
         try {
             mainStage.getScene().setRoot(FXMLLoader.load(getClass().getResource(fxml)));
         } catch (IOException e) {
             log.error("Can`t change scene : ", e);
         }
-    }
+    }*/
 
     private static Rectangle2D screenBounds;
 
     public static void centerIt() {
         mainStage.setX((screenBounds.getWidth() - mainStage.getWidth()) / 2);
         mainStage.setY((screenBounds.getHeight() - mainStage.getHeight()) / 2);
+        log.info("stage successfully centered!");
     }
 
     @Override
     public void init() throws IOException {
-        Parent rootNode = SceneLoader.getInstance().loadScene(this.getClass(), FXMLPath.MAIN);
+        Parent rootNode = SceneLoader.getInstance().loadScene(getClass(), FXMLPath.MAIN);
 //        Parent rootNode = new FXMLLoader().load(getClass().getResourceAsStream(FXMLPath.MAIN));
         mainScene = new Scene(rootNode, MAIN_WIDTH, MAIN_HEIGHT);
+        log.debug("");
     }
 
     @Override

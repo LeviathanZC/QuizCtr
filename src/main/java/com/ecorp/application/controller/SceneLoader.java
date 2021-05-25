@@ -22,7 +22,7 @@ public class SceneLoader {
 
     public Parent loadScene(Class clazz, String path) {
         try {
-            return (Parent) new FXMLLoader().load(clazz.getResourceAsStream(path));
+            return new FXMLLoader().load(clazz.getResourceAsStream(path));
         } catch (IOException e) {
             log.error("Can't load scene for '" + path + "' with " + clazz.getCanonicalName(), e);
         }
