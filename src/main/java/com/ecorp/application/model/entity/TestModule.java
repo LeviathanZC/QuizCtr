@@ -1,10 +1,6 @@
 package com.ecorp.application.model.entity;
 
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-
 import java.time.LocalTime;
-import java.util.List;
 
 public abstract class TestModule {
 
