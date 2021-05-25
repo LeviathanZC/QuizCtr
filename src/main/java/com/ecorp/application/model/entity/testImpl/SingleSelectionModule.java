@@ -5,25 +5,34 @@ import com.ecorp.application.model.entity.Option;
 import com.ecorp.application.model.entity.TestModule;
 
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class SingleSelectionModule extends TestModule {
 
     private List<Option> options;
 
-    public SingleSelectionModule() { super(); }
+    public SingleSelectionModule() {
+        super();
+        this.options = new ArrayList<>();
+    }
 
     public SingleSelectionModule(List<Option> options) {
         this.options = options;
     }
 
-    public SingleSelectionModule(String name, String question, int score, LocalTime timeConstraint, List<Option> options) {
+    public SingleSelectionModule(String name, String question, int score, LocalTime timeConstraint) {
         super(name, question, ModuleType.SINGLE, score, timeConstraint);
-        this.options = options;
+        this.options = new ArrayList<>();
     }
 
     public void addOption(Option option) {
         options.add(option);
+    }
+
+    public void shuffle() {
+        Collections.shuffle(options);
     }
 
     @Override
