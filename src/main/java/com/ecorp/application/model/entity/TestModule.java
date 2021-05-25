@@ -6,7 +6,7 @@ import org.apache.commons.lang.builder.HashCodeBuilder;
 import java.time.LocalTime;
 import java.util.List;
 
-public class TestModule {
+public abstract class TestModule {
 
     private String name;
     private String question;

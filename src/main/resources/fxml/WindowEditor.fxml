@@ -3,11 +3,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ecorp.application.controller.WindowEditorController">
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ecorp.application.controller.fxml.WindowEditorController">
    <children>
       <BorderPane prefHeight="600.0" prefWidth="1000.0">
          <top>
-            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+            <VBox prefHeight="43.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
                <children>
                   <MenuBar>
                     <menus>
@@ -15,10 +15,14 @@
                         <items>
                               <Menu mnemonicParsing="false" text="Создать...">
                                 <items>
-                                  <MenuItem mnemonicParsing="false" text="Тест" />
-                                    <MenuItem mnemonicParsing="false" text="Модуль" />
+                                  <MenuItem fx:id="menuCreateTest" mnemonicParsing="false" onAction="#invokeCreateDialog" text="Тест" />
+                                    <MenuItem disable="true" mnemonicParsing="false" text="Модуль" />
                                 </items>
                               </Menu>
+                              <SeparatorMenuItem mnemonicParsing="false" />
+                              <MenuItem disable="true" mnemonicParsing="false" text="Открыть в..." />
+                              <MenuItem disable="true" mnemonicParsing="false" text="Открыть недавние" />
+                              <SeparatorMenuItem mnemonicParsing="false" />
                           <MenuItem fx:id="toMainButton" mnemonicParsing="false" onAction="#moveToMain" text="Выйти из Редактора" />
                         </items>
                       </Menu>
@@ -47,6 +51,9 @@
                </children>
             </VBox>
          </top>
+         <left>
+            <TreeView prefHeight="432.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+         </left>
       </BorderPane>
    </children>
 </AnchorPane>
