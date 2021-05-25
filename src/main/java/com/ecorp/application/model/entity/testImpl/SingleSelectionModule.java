@@ -5,8 +5,8 @@ import com.ecorp.application.model.entity.Option;
 import com.ecorp.application.model.entity.TestModule;
 
 import java.time.LocalTime;
-import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 
 public class SingleSelectionModule extends TestModule {
@@ -15,7 +15,7 @@ public class SingleSelectionModule extends TestModule {
 
     public SingleSelectionModule() {
         super();
-        this.options = new ArrayList<>();
+        this.options = new LinkedList<>();
     }
 
     public SingleSelectionModule(List<Option> options) {
@@ -24,7 +24,7 @@ public class SingleSelectionModule extends TestModule {
 
     public SingleSelectionModule(String name, String question, int score, LocalTime timeConstraint) {
         super(name, question, ModuleType.SINGLE, score, timeConstraint);
-        this.options = new ArrayList<>();
+        this.options = new LinkedList<>();
     }
 
     public void addOption(Option option) {
