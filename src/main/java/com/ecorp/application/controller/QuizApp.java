@@ -1,7 +1,8 @@
 package com.ecorp.application.controller;
 
+import com.ecorp.application.model.entity.Test;
+import com.ecorp.application.model.service.TestHandler;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -18,8 +19,8 @@ public class QuizApp extends Application {
     private static final Logger log = LoggerFactory.getLogger(QuizApp.class);
 
     public static void main(String[] args) throws Exception {
-        launch(args);
         log.info("launching entry point...");
+        launch(args);
     }
 
     private static Stage mainStage;
@@ -36,14 +37,6 @@ public class QuizApp extends Application {
         return mainScene;
     }
 
-    /*public void changeScene(String fxml) {
-        try {
-            mainStage.getScene().setRoot(FXMLLoader.load(getClass().getResource(fxml)));
-        } catch (IOException e) {
-            log.error("Can`t change scene : ", e);
-        }
-    }*/
-
     private static Rectangle2D screenBounds;
 
     public static void centerIt() {
@@ -55,9 +48,9 @@ public class QuizApp extends Application {
     @Override
     public void init() throws IOException {
         Parent rootNode = SceneLoader.getInstance().loadScene(getClass(), FXMLPath.MAIN);
-//        Parent rootNode = new FXMLLoader().load(getClass().getResourceAsStream(FXMLPath.MAIN));
         mainScene = new Scene(rootNode, MAIN_WIDTH, MAIN_HEIGHT);
-        log.debug("");
+        log.debug("initializing application");
+        testHandler = TestHandler.getInstance();
     }
 
     @Override
@@ -69,4 +62,18 @@ public class QuizApp extends Application {
         primaryStage.show();
         centerIt();
     }
+
+
+
+    private static TestHandler testHandler;
+
+    public static void setTest(Test test) {
+        testHandler.setCurrent(test);
+    }
+
+    public static TestHandler getTestHandler() {
+        return testHandler;
+    }
+
+
 }

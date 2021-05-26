@@ -1,18 +1,20 @@
 package com.ecorp.application.model.entity;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import java.util.LinkedList;
-import java.util.List;
 
 public class Test {
 
     private String generalTopic;
-    private List<TestModule> modules;
+    private ObservableList<TestModule> modules;
 
-    public Test() {}
+    public Test() {this("");}
 
     public Test(String topic) {
         this.generalTopic = topic;
-        modules = new LinkedList<>();
+        modules = FXCollections.observableArrayList();
     }
 
     @Override
@@ -50,11 +52,11 @@ public class Test {
         this.generalTopic = generalTopic;
     }
 
-    public List<TestModule> getModules() {
+    public ObservableList<TestModule> getModules() {
         return modules;
     }
 
-    public void setModules(List<TestModule> modules) {
+    public void setModules(ObservableList<TestModule> modules) {
         this.modules = modules;
     }
 }

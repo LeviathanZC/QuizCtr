@@ -9,24 +9,24 @@
          <bottom>
             <HBox alignment="CENTER" prefHeight="0.0" prefWidth="300.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="createButton" defaultButton="true" mnemonicParsing="false" prefHeight="28.0" prefWidth="150.0" text="Создать" />
-                  <Button cancelButton="true" mnemonicParsing="false" prefHeight="28.0" prefWidth="150.0" text="Отмена" />
+                  <Button fx:id="createButton" defaultButton="true" mnemonicParsing="false" onAction="#handleCreate" prefHeight="28.0" prefWidth="150.0" text="Создать" />
+                  <Button cancelButton="true" mnemonicParsing="false" onAction="#handleCancel" prefHeight="28.0" prefWidth="150.0" text="Отмена" />
                </children>
             </HBox>
          </bottom>
          <top>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <Label text="Название : " />
-                  <TextField />
+                  <Label prefHeight="18.0" prefWidth="53.0" text="Тема : " />
+                  <TextField fx:id="topicField" prefHeight="28.0" prefWidth="132.0" />
                </children>
             </HBox>
          </top>
          <center>
             <HBox alignment="TOP_CENTER" prefHeight="89.0" prefWidth="300.0" BorderPane.alignment="CENTER">
                <children>
-                  <Label prefHeight="38.0" prefWidth="78.0" text="Кол-во модулей" wrapText="true" />
-                  <Spinner fx:id="moduleSpinner" editable="true" prefHeight="35.0" prefWidth="165.0" />
+                  <Label prefHeight="38.0" prefWidth="61.0" text="Кол-во модулей" wrapText="true" />
+                  <Spinner fx:id="moduleSpinner" editable="true" prefHeight="35.0" prefWidth="142.0" />
                </children>
             </HBox>
          </center>

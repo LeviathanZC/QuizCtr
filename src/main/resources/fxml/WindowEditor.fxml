@@ -16,7 +16,6 @@
                               <Menu mnemonicParsing="false" text="Создать...">
                                 <items>
                                   <MenuItem fx:id="menuCreateTest" mnemonicParsing="false" onAction="#invokeCreateDialog" text="Тест" />
-                                    <MenuItem disable="true" mnemonicParsing="false" text="Модуль" />
                                 </items>
                               </Menu>
                               <SeparatorMenuItem mnemonicParsing="false" />
@@ -31,16 +30,19 @@
                           <MenuItem mnemonicParsing="false" text="Delete" />
                         </items>
                       </Menu>
+                        <Menu mnemonicParsing="false" text="Задания">
+                          <items>
+                            <MenuItem mnemonicParsing="false" onAction="#addSingleModule" text="Одиночный" />
+                              <MenuItem mnemonicParsing="false" onAction="#addMultiModule" text="Множественный" />
+                              <MenuItem mnemonicParsing="false" onAction="#addMappingModule" text="Сопоставление" />
+                              <MenuItem mnemonicParsing="false" onAction="#addGraphicModule" text="Графический" />
+                          </items>
+                        </Menu>
                       <Menu mnemonicParsing="false" text="Помощь">
                         <items>
                           <MenuItem mnemonicParsing="false" text="About" />
                         </items>
                       </Menu>
-                        <Menu mnemonicParsing="false" text="Менеджер заданий">
-                          <items>
-                            <MenuItem mnemonicParsing="false" text="Action 1" />
-                          </items>
-                        </Menu>
                     </menus>
                   </MenuBar>
                   <ToolBar prefHeight="40.0" prefWidth="200.0">
@@ -52,8 +54,16 @@
             </VBox>
          </top>
          <left>
-            <TreeView prefHeight="432.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+            <TreeView fx:id="testTree" prefHeight="432.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
          </left>
+         <center>
+            <SplitPane dividerPositions="0.5085066162570888" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" BorderPane.alignment="CENTER">
+              <items>
+                <AnchorPane fx:id="commonPane" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
+              </items>
+            </SplitPane>
+         </center>
       </BorderPane>
    </children>
 </AnchorPane>
